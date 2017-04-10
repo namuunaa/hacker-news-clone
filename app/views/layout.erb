@@ -4,7 +4,7 @@
   <!-- 
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
+    See: http://necolas.gitdub.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
   <!--
@@ -19,24 +19,24 @@
 </head>
 <body>
 <header>
-<h2>Hacker News</h2>
-<nav>
+<table>
   <%if current_user%>
-  <ul>
-    <li><a href="/">homepage</a></li>
-    <li><a href="/posts/new">submit</a></li>
-      <li><%=current_user.username%></li>
-      <li><%=erb :_logout%></li>
-  </ul>
+  <tr class="top">
+    <td style="font-weight: bold">Hacker News</td>
+    <td><a href="/">homepage</a></td>
+    <td><a href="/posts/new">submit</a></td>
+    <td style="text-align: right"><%=current_user.username%></td>
+    <td style="text-align: right"><%=erb :_logout%></td>
+  </tr>
   <%else%>
-  <ul>
-      <li><a href="/">homepage</a></li>
-      <li><a href="/posts/new">submit</a></li>
-      <li><a href="/users/new">create account</a></li>
-      <li><a href="/sessions/new">login</a></li>
-  </ul>
+  <tr>
+    <td><a href="/">homepage</a></td>
+    <td><a href="/posts/new">submit</a></td>
+    <td><a href="/users/new">create account</a></td>
+    <td style="text-align: right, padding-right: 4px;"><a href="/sessions/new">login</a></td>
+  </tr>
   <%end%>
-</nav>
+</table>
 </header>
   <%= yield %>
 </body>
