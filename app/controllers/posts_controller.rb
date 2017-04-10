@@ -11,7 +11,7 @@ end
 
 post '/posts' do 
   @post = Post.new(params[:post])
-  if @post.save
+  if @post && @post.save
     redirect '/'
   else
     @errors = @post.errors.full_messages 
