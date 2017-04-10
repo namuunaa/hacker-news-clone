@@ -3,7 +3,7 @@
   <%@posts.each do |post|%>
   <li>
     <a href="/posts/<%=post.id%>"><%=post.title%></a><br>
-    <span class="user-name">by <a href="/users/<%=post.user_id%>"><%=post.user.username%> | <%=post.comments.count%> comments</a></span>
+    <span class="user-name">by <a id="link" href="/users/<%=post.user_id%>"><%=post.user.username%></a> | <a id="link" href="/posts/<%=post.id%>"><%=post.comments.count%> comments</a></span>
   </li> 
 <%end%>
 </ol>

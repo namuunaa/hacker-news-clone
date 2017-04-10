@@ -22,17 +22,16 @@
 <table>
   <%if current_user%>
   <tr class="top">
-    <td style="font-weight: bold">Hacker News</td>
-    <td><a href="/">homepage</a></td>
-    <td><a href="/posts/new">submit</a></td>
-    <td style="text-align: right"><%=current_user.username%></td>
+    <td style="font-weight: bold"><a href="/">Hacker News</a></td>
+    <td><a href="/posts/new">submit</a> | </td>
+    <td style="text-align: right"><%=current_user.username%> | </td>
     <td style="text-align: right"><%=erb :_logout%></td>
   </tr>
   <%else%>
-  <tr>
-    <td><a href="/">homepage</a></td>
-    <td><a href="/posts/new">submit</a></td>
-    <td><a href="/users/new">create account</a></td>
+  <tr class="top">
+    <td style="font-weight: bold"><a href="/">Hacker News</a></td>
+    <td><a href="/posts/new">submit</a> | </td>
+    <td><a href="/users/new">create account</a> | </td>
     <td style="text-align: right, padding-right: 4px;"><a href="/sessions/new">login</a></td>
   </tr>
   <%end%>
