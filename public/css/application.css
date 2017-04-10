@@ -7,6 +7,7 @@ body {
   margin: auto;
   font-family: Verdana;
   font-size: 14px;
+  color: black;
 }
 
 .container {
@@ -15,6 +16,7 @@ body {
 
 header {
   background-color: #ff6600;
+  padding: 3px;
 }
 
 td {
@@ -25,6 +27,7 @@ td {
 
 .user-name {
   font-size: 11px;
+  color: #828282;
 }
 
 a, .top a:visited {
@@ -35,8 +38,13 @@ a:visited {
   color: #828282;
 }
 
+a#link:hover {
+  text-decoration: underline;
+}
+
 input#logout {
   background: none;
   border: none;
-  
 }
+
+
