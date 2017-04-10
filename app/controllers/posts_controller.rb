@@ -10,8 +10,15 @@ get '/posts/new' do
 end
 
 post '/posts' do 
-  @post = Post.new
+  @post = Post.new(params[:post])
+  if @post.save
+    redirect '/'
+  else
+    @errors = @post.errors.full_messages 
+    erb :'posts/new'  # not showing the form
+  end
 end
+
 # GET ONE POST
 get '/posts/:id' do
   @post = Post.find(params[:id])

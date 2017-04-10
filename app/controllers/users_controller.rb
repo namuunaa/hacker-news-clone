@@ -1,3 +1,4 @@
+# NEW USER CREATE ACCOUNT
 get '/users/new' do 
   erb :'users/new'
 end
