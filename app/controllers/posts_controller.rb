@@ -11,7 +11,7 @@ end
 
 post '/posts' do 
   @post = Post.new(params[:post])
-  if @post && @post.save
+  if @post.save
     redirect '/'
   else
     @errors = @post.errors.full_messages 
@@ -25,17 +25,6 @@ get '/posts/:id' do
   erb :'posts/show'
 end
 
-# NEW COMMENT IN A POST
-
-post '/posts/:post_id/comments' do
-  @post = Post.find(params[:post_id])
-  @comment = @post.comments.new(params[:comment])
-  if @comment.save
-    redirect "/posts/#{@post.id}"
-  else
-    erb :'comments/_new'
-  end
-end
 
 
 
