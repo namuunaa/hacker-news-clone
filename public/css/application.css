@@ -1,0 +1,42 @@
+* {
+  text-decoration: none;
+}
+
+body {
+  width: 85%;
+  margin: auto;
+  font-family: Verdana;
+  font-size: 14px;
+}
+
+.container {
+  background-color: rgb(246, 246, 239);
+}
+
+header {
+  background-color: #ff6600;
+}
+
+td {
+  margin: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.user-name {
+  font-size: 11px;
+}
+
+a, .top a:visited {
+  color: black;
+}
+
+a:visited {
+  color: #828282;
+}
+
+input#logout {
+  background: none;
+  border: none;
+  
+}

@@ -1,0 +1,16 @@
+<div class="container">
+<p><%=@post.title%></p>
+<p class="user-name">by <a href="/users/<%=@post.user_id%>"><%=@post.user.username%></a></p>
+<p><%=@post.body%></p>
+
+<p><%=erb :'/comments/_new'%></p>
+
+<div>
+  <%@post.comments.each do |comment|%>
+    <ul>
+      <li><a href="/users/<%=comment.user_id%>"><%=comment.user.username%></a></li>
+      <li><%=comment.text%> </li>
+    </ul>
+  <%end%>
+</div>
+</div>
