@@ -1,4 +1,4 @@
 <p><%=@post.title%></p>
-<p>by <%=@post.user.username%></p>
+<p>by <a href="/users/<%=@post.user_id%>"><%=@post.user.username%></a></p>
 <p><%=@post.body%></p>
 

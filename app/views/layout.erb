@@ -21,12 +21,21 @@
 <header>
 <h1>Hacker News</h1>
 <nav>
+  <%if current_user%>
   <ul>
     <li><a href="/">homepage</a></li>
-    <li><a href="/users/new">create account</a></li>
-    <li><a href="/sessions/new">login</a></li>
     <li><a href="/posts/new">submit</a></li>
+      <li><%=current_user.username%></li>
+      <li><%=erb :_logout%></li>
   </ul>
+  <%else%>
+  <ul>
+      <li><a href="/">homepage</a></li>
+      <li><a href="/posts/new">submit</a></li>
+      <li><a href="/users/new">create account</a></li>
+      <li><a href="/sessions/new">login</a></li>
+  </ul>
+  <%end%>
 </nav>
 </header>
   <%= yield %>
