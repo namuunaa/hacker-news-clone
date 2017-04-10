@@ -2,7 +2,7 @@
   <%@posts.each do |post|%>
   <li>
     <a href="/posts/<%=post.id%>"><%=post.title%></a><br>
-    by <a href="/users/<%=post.user_id%>"><%=post.user.username%></a>
+    <span class="user-name">by <a href="/users/<%=post.user_id%>"><%=post.user.username%></a></span>
   </li> 
 <%end%>
 </ol>

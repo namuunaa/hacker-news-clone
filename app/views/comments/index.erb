@@ -1,5 +1,5 @@
 <ul>
   <%@comments.each do |comment|%>
-  <li><a href="/users/<%=comment.user_id%>"><%=comment.user.username%></a> on <%=comment.post.title%><br><%=comment.text%></li> 
+  <li><a class="user-name" href="/users/<%=comment.user_id%>"><%=comment.user.username%></a> on <%=comment.post.title%><br><%=comment.text%></li> 
 <%end%>
 </ul>
