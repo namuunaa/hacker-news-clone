@@ -6,6 +6,7 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
+    login_user
     redirect '/' #later need to redirect to new post page
   else
     @errors = @user.errors.full_messages
