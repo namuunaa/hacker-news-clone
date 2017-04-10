@@ -7,7 +7,7 @@ end
 post '/posts/:post_id/comments' do
   @post = Post.find(params[:post_id])
   @comment = Comment.new(params[:comment])
-  if @comment.save
+  if current_user && @comment.save
     redirect "/posts/#{@post.id}"
   else
     @errors = @comment.errors.full_messages
