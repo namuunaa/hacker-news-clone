@@ -6,12 +6,14 @@ end
 
 #NEW POST
 get '/posts/new' do
+  @user = current_user
   erb :'posts/new'
 end
 
-post '/posts' do 
-  @post = Post.new(params[:post])
-  if current_user && @post.save
+post '/posts' do
+  @user = current_user
+  @post = @user.posts.new(params[:post])
+  if @post.save
     redirect '/'
   else
     @errors = @post.errors.full_messages 

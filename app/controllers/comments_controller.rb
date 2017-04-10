@@ -1,13 +1,14 @@
 get '/posts/:post_id/comments/new' do
-  @post = Post.find(params[:post_id])
-  @comment = Comment.new(post_id: @post.id)
+  @user = current_user
   erb :'comments/_new'
 end
 
 post '/posts/:post_id/comments' do
+  @user = current_user
   @post = Post.find(params[:post_id])
-  @comment = Comment.new(params[:comment])
-  if current_user && @comment.save
+  @comment = @user.comments.new(params[:comment])
+  @comment.post_id = @post.id
+  if @comment.save
     redirect "/posts/#{@post.id}"
   else
     @errors = @comment.errors.full_messages
