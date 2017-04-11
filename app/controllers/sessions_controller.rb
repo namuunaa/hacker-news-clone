@@ -7,7 +7,7 @@ post '/sessions' do
   if @user && @user.authenticate(params[:username], params[:password])
     login_user
   else
-    @errors = ["The email or password is incorrect."]  #error message not showing up
+    @errors = ["You done goofed. ur email or password is incorrect"]
     erb :'sessions/new'
   end
 end
