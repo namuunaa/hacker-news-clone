@@ -11,13 +11,19 @@ get '/posts/new' do
 end
 
 post '/posts' do
-  @user = current_user
-  @post = @user.posts.new(params[:post])
-  if @post.save
-    redirect '/'
+  if !current_user
+    @errors = ['You need to login first']
+    erb :'posts/new'
+
   else
-    @errors = @post.errors.full_messages 
-    erb :'posts/new'  # not showing the form
+    @user = current_user
+    @post = @user.posts.new(params[:post])
+    if @post.save
+      redirect '/'
+    else
+      @errors = @post.errors.full_messages 
+      erb :'posts/new'  # not showing the form
+    end
   end
 end
 

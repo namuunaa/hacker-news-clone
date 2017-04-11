@@ -1,5 +1,9 @@
 <form action="/posts/<%=@post.id%>/comments" method="POST">
-  <label>text</label>
+  <label>comment:</label>
   <textarea rows="5" column="50" name="comment[text]"></textarea><br>
-  <input type="submit" name="add comment">
+  <input type="submit" value="add comment">
 </form>
+
+
+<%= erb :'_errors' %>
+
