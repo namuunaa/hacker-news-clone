@@ -30,7 +30,7 @@ td {
   color: #828282;
 }
 
-a, .top a:visited {
+a, .nav-main a:visited, .nav-side a:visited {
   color: black;
 }
 
@@ -45,6 +45,10 @@ a#link:hover {
 input#logout {
   background: none;
   border: none;
+}
+
+.nav-side {
+  float: right;
 }
 
 

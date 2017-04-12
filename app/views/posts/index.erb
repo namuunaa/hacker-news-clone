@@ -1,7 +1,7 @@
 <div class="container">
 <ol>
   <%@posts.each do |post|%>
-  <li>
+  <li >
     <a href="/posts/<%=post.id%>"><%=post.title%></a><br>
     <span class="user-name">by <a id="link" href="/users/<%=post.user_id%>"><%=post.user.username%></a> | <a id="link" href="/posts/<%=post.id%>"><%=post.comments.count%> comments</a></span>
   </li> 

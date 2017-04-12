@@ -2,8 +2,8 @@
   <p>
     user: <%=@user.username%>
   </p>
-  <ul>
-    <li><a href="/users/<%=@user.id%>/posts">submissions</a></li><br>
+  <ul class="users-list">
+    <li><a class="user-detail-link" href="/users/<%=@user.id%>/posts">submissions</a></li><br>
     <li><a href="/users/<%=@user.id%>/comments">comments</a></li>
   </ul>
 </div>
